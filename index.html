@@ -6,114 +6,120 @@
 <title>GTA Online Club</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-    /* --- RESET --- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; background-color: #121212; color: #fff; }
+/* --- RESET --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Roboto', sans-serif; background-color: #121212; color: #fff; }
 
-    /* --- HEADER --- */
-    header {
-        background-color: #1c1c1c;
-        padding: 20px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid #ff0000;
-    }
-    header h1 { font-family: 'Orbitron', sans-serif; color: #ff0000; font-size: 32px; }
-    nav a {
-        color: #fff;
-        margin-left: 25px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-    nav a:hover { color: #ff0000; }
+/* --- HEADER --- */
+header {
+    background-color: #1c1c1c;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ff0000;
+}
+header h1 { font-family: 'Orbitron', sans-serif; color: #ff0000; font-size: 32px; }
+nav a {
+    color: #fff;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav a:hover { color: #ff0000; }
 
-    /* --- HERO SECTION --- */
-    .hero {
-        background: url('https://images.unsplash.com/photo-1602524208462-85c9b9a8f09c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NzYyfDB8MHxzZWFyY2h8M3x8Z3RhJTIwb25saW5lfGVufDB8fDB8fHww&ixlib=rb-4.0.3&q=80&w=1400') center/cover no-repeat;
-        height: 500px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    .hero h2 {
-        font-family: 'Orbitron', sans-serif;
-        font-size: 48px;
-        color: #fff;
-        background-color: rgba(0,0,0,0.5);
-        padding: 20px 40px;
-        border-radius: 10px;
-    }
+/* --- HERO SECTION --- */
+.hero {
+    background: url('https://images.unsplash.com/photo-1602524208462-85c9b9a8f09c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1400') center/cover no-repeat;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    color: #fff;
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px 40px;
+    border-radius: 10px;
+}
 
-    /* --- MAIN CONTENT --- */
-    .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+/* --- MAIN CONTENT --- */
+.container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
 
-    /* --- Sekcja o klubie --- */
-    .about {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        align-items: center;
-    }
-    .about img { flex: 1 1 400px; border-radius: 10px; }
-    .about-text { flex: 1 1 400px; }
-    .about-text h3 { font-size: 28px; color: #ff0000; margin-bottom: 15px; }
-    .about-text p { line-height: 1.6; }
+/* --- O klubie --- */
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+}
+.about img { flex: 1 1 400px; border-radius: 10px; }
+.about-text { flex: 1 1 400px; }
+.about-text h3 { font-size: 28px; color: #ff0000; margin-bottom: 15px; }
+.about-text p { line-height: 1.6; }
 
-    /* --- Sekcja Członkowie --- */
-    .members {
-        margin-top: 60px;
-    }
-    .members h3 { font-size: 32px; color: #ff0000; margin-bottom: 20px; text-align: center; }
-    .member-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
-    .member-card {
-        background-color: #1e1e1e;
-        padding: 15px;
-        border-radius: 10px;
-        text-align: center;
-        transition: 0.3s;
-    }
-    .member-card:hover { transform: scale(1.05); border: 2px solid #ff0000; }
-    .member-card img { width: 100px; height: 100px; border-radius: 50%; margin-bottom: 10px; }
-    .member-card h4 { font-size: 18px; }
+/* --- Członkowie --- */
+.members { margin-top: 60px; }
+.members h3 { font-size: 32px; color: #ff0000; margin-bottom: 20px; text-align: center; }
+.member-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+.member-card {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+.member-card:hover { transform: scale(1.05); border: 2px solid #ff0000; }
+.member-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
 
-    /* --- Sekcja Galerie --- */
-    .gallery {
-        margin-top: 60px;
-    }
-    .gallery h3 { font-size: 32px; color: #ff0000; margin-bottom: 20px; text-align: center; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
-    .gallery-grid img {
-        width: 100%;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-    .gallery-grid img:hover { transform: scale(1.05); }
+/* --- Galeria --- */
+.gallery { margin-top: 60px; }
+.gallery h3 { font-size: 32px; color: #ff0000; margin-bottom: 20px; text-align: center; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.gallery-grid img:hover { transform: scale(1.05); }
 
-    /* --- Lightbox --- */
-    #lightbox {
-        position: fixed;
-        display: none;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: rgba(0,0,0,0.9);
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
-    #lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; }
+/* --- Lightbox --- */
+#lightbox {
+    position: fixed;
+    display: none;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+#lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; }
 
-    /* --- Footer --- */
-    footer {
-        background-color: #1c1c1c;
-        text-align: center;
-        padding: 20px;
-        margin-top: 60px;
-        border-top: 2px solid #ff0000;
-    }
+/* --- Footer --- */
+footer {
+    background-color: #1c1c1c;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    border-top: 2px solid #ff0000;
+}
+
+/* --- Responsywność --- */
+@media(max-width:768px){
+    .about { flex-direction: column; }
+}
 </style>
 </head>
 <body>
@@ -135,23 +141,37 @@
 <div class="container">
     <!-- O klubie -->
     <section class="about" id="about">
-        <img src="https://images.unsplash.com/photo-1602524208462-85c9b9a8f09c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NzYyfDB8MHxzZWFyY2h8M3x8Z3RhJTIwb25saW5lfGVufDB8fDB8fHww&ixlib=rb-4.0.3&q=80&w=600" alt="O klubie">
+        <img src="https://images.unsplash.com/photo-1602524208462-85c9b9a8f09c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600" alt="O klubie">
         <div class="about-text">
             <h3>O naszym klubie</h3>
             <p>Jesteśmy elitarnym klubem GTA Online. Organizujemy wyścigi, misje, eventy i spotkania wirtualne. Dołącz do nas i poczuj klimat ulic Los Santos! Nasza ekipa to pasjonaci gry, którzy stawiają zabawę i strategię na pierwszym miejscu.</p>
         </div>
     </section>
 
-<div class="member-card">
-    <img src="fk1.png" alt="Fikusz">
-    <h4>Fikusz</h4>
-    <p>Właściciel</p>
-</div>
-<div class="member-card">
-    <img src="mx2.png" alt="Maxelio">
-    <h4>Maxelio</h4>
-    <p>Współwłaściciel</p>
-</div>
+    <!-- Członkowie -->
+    <section class="members" id="members">
+        <h3>Nasi członkowie</h3>
+        <div class="member-grid">
+            <div class="member-card">
+                <img src="fk1.png" alt="Fikusz">
+                <h4>Fikusz</h4>
+                <p>Właściciel</p>
+            </div>
+            <div class="member-card">
+                <img src="mx2.png" alt="Maxelio">
+                <h4>Maxelio</h4>
+                <p>Współwłaściciel</p>
+            </div>
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/100?img=3" alt="">
+                <h4>Player3</h4>
+            </div>
+            <div class="member-card">
+                <img src="https://i.pravatar.cc/100?img=4" alt="">
+                <h4>Player4</h4>
+            </div>
+        </div>
+    </section>
 
     <!-- Galeria -->
     <section class="gallery" id="gallery">
@@ -190,16 +210,3 @@ images.forEach(img => {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
