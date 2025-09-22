@@ -140,6 +140,67 @@ h2 {
 }
 
 /* ============================= */
+/* Statystyki, Like/Dislike i komentarze */
+/* ============================= */
+#yt-stats {
+    margin-top: 25px;
+    padding: 15px;
+    background: rgba(51,153,255,0.1);
+    border-radius: 15px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 25px rgba(51,153,255,0.3);
+    font-size: 1.1em;
+}
+
+#yt-stats button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #3399ff;
+    color: #fff;
+}
+
+#comments-section {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+#comments-section input {
+    width: 70%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #3399ff;
+}
+
+#comments-section button {
+    padding: 8px 12px;
+    margin-left: 5px;
+    border-radius: 8px;
+    border: none;
+    background: #3399ff;
+    color: #fff;
+    cursor: pointer;
+}
+
+#commentsList {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+#commentsList li {
+    background: rgba(51,153,255,0.1);
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+
+/* ============================= */
 /* Formularz Weryfikacji         */
 /* ============================= */
 .verification-container {
@@ -228,3 +289,4 @@ footer {
     border-radius: 15px 15px 0 0;
     box-shadow: 0 -4px 10px rgba(51,153,255,0.2);
 }
+
