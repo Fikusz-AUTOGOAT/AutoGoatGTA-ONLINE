@@ -305,3 +305,81 @@ nav a {
 .download:hover {
   background: #5f5;
 }
+
+
+/* PODSTRONA MODA */
+#mod-details-page {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px;
+    background: #1f1f1f;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+#mod-details-page h1 {
+    font-size: 2.5rem;
+    color: #ffcc00;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#mod-details-page img {
+    width: 300px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.7);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#mod-details-page img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 35px rgba(255,204,0,0.5);
+}
+
+#mod-details-page p {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin: 20px 0;
+}
+
+.back-btn, .download-btn {
+    padding: 14px 24px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn {
+    background: #333;
+    color: #fff;
+}
+
+.back-btn:hover {
+    background: #555;
+}
+
+.download-btn {
+    background: #ffcc00;
+    color: #111;
+}
+
+.download-btn:hover {
+    background: #e6b800;
+    transform: scale(1.05);
+}
+
+/* GALERIA OBRAZKÓW NA PODSTRONIE */
+.mod-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
