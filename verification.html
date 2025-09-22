@@ -1,174 +1,106 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weryfikacja – Klub GTA 5 Online</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .verification-container {
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 20px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-            box-shadow: 0 0 25px rgba(255,0,100,0.5);
-        }
-
-        .verification-container h2 {
-            color: #ff0055;
-            margin-bottom: 20px;
-        }
-
-        .question {
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .question p {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .question label {
-            display: block;
-            margin-bottom: 5px;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .question input[type="radio"] {
-            margin-right: 10px;
-        }
-
-        .question label:hover {
-            color: #ff0055;
-        }
-
-        button {
-            padding: 12px 25px;
-            font-size: 1em;
-            background: #ff0055;
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background: #ff3388;
-        }
-
-        #result {
-            margin-top: 30px;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #00ff99;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weryfikacja – Klub GTA 5 Online</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>🔥 Weryfikacja do Klubu GTA 5 Online 🔥</h1>
-        <nav>
-            <a href="index.html">Strona Główna</a>
-            <a href="about.html">O nas</a>
-            <a href="videos.html">Filmy YouTube</a>
-            <a href="contact.html">Kontakt</a>
-            <a href="verification.html">Weryfikacja</a>
-        </nav>
-    </header>
+<header>
+<h1>🔥 Weryfikacja do Klubu GTA 5 Online 🔥</h1>
+<nav>
+    <a href="index.html">Strona Główna</a>
+    <a href="about.html">O nas</a>
+    <a href="videos.html">Filmy YouTube</a>
+    <a href="contact.html">Kontakt</a>
+    <a href="verification.html">Weryfikacja</a>
+</nav>
+</header>
 
-    <div class="verification-container">
-        <h2>Wypełnij weryfikację rekrutacyjną</h2>
-        <form id="verificationForm">
-            <!-- Pytanie 1 -->
-            <div class="question">
-                <p>1. Ile grasz dziennie w GTA Online?</p>
-                <label><input type="radio" name="q1" value="a"> 1h</label>
-                <label><input type="radio" name="q1" value="b"> 2h</label>
-                <label><input type="radio" name="q1" value="c"> 3+</label>
-                <label><input type="radio" name="q1" value="d"> Nie gram codziennie, a jak gram to około 1h+</label>
-            </div>
+<div class="verification-container">
+<h2>Wypełnij weryfikację rekrutacyjną</h2>
+<form id="verificationForm">
 
-            <!-- Pytanie 2 -->
-            <div class="question">
-                <p>2. Czy masz dobre nastawienie do ludzi?</p>
-                <label><input type="radio" name="q2" value="a"> Tak</label>
-                <label><input type="radio" name="q2" value="b"> Nie</label>
-            </div>
+<!-- Pytanie 1 -->
+<div class="question">
+<p>1. Ile grasz dziennie w GTA Online?</p>
+<label><input type="radio" name="q1" value="a"> 1h</label>
+<label><input type="radio" name="q1" value="b"> 2h</label>
+<label><input type="radio" name="q1" value="c"> 3+</label>
+<label><input type="radio" name="q1" value="d"> Nie gram codziennie, a jak gram to około 1h+</label>
+</div>
 
-            <!-- Pytanie 3 -->
-            <div class="question">
-                <p>3. Czy umiesz współpracować w drużynie?</p>
-                <label><input type="radio" name="q3" value="a"> Tak</label>
-                <label><input type="radio" name="q3" value="b"> Czasem</label>
-                <label><input type="radio" name="q3" value="c"> Nie</label>
-            </div>
+<!-- Pytanie 2 -->
+<div class="question">
+<p>2. Czy masz dobre nastawienie do ludzi?</p>
+<label><input type="radio" name="q2" value="a"> Tak</label>
+<label><input type="radio" name="q2" value="b"> Nie</label>
+</div>
 
-            <!-- Pytanie 4 -->
-            <div class="question">
-                <p>4. Czy bierzesz udział w akcjach klubu i eventach online?</p>
-                <label><input type="radio" name="q4" value="a"> Tak, regularnie</label>
-                <label><input type="radio" name="q4" value="b"> Sporadycznie</label>
-                <label><input type="radio" name="q4" value="c"> Nie</label>
-            </div>
+<!-- Pytanie 3 -->
+<div class="question">
+<p>3. Czy umiesz współpracować w drużynie?</p>
+<label><input type="radio" name="q3" value="a"> Tak</label>
+<label><input type="radio" name="q3" value="b"> Czasem</label>
+<label><input type="radio" name="q3" value="c"> Nie</label>
+</div>
 
-            <!-- Pytanie 5 -->
-            <div class="question">
-                <p>5. Czy jesteś gotowy przestrzegać zasad klubu?</p>
-                <label><input type="radio" name="q5" value="a"> Tak</label>
-                <label><input type="radio" name="q5" value="b"> Nie</label>
-            </div>
+<!-- Pytanie 4 -->
+<div class="question">
+<p>4. Czy bierzesz udział w akcjach klubu i eventach online?</p>
+<label><input type="radio" name="q4" value="a"> Tak, regularnie</label>
+<label><input type="radio" name="q4" value="b"> Sporadycznie</label>
+<label><input type="radio" name="q4" value="c"> Nie</label>
+</div>
 
-            <button type="submit">Wyślij odpowiedzi</button>
-        </form>
+<!-- Pytanie 5 -->
+<div class="question">
+<p>5. Czy jesteś gotowy przestrzegać zasad klubu?</p>
+<label><input type="radio" name="q5" value="a"> Tak</label>
+<label><input type="radio" name="q5" value="b"> Nie</label>
+</div>
 
-        <div id="result"></div>
-    </div>
+<button type="submit">Wyślij odpowiedzi</button>
+</form>
+<div id="result"></div>
+</div>
 
-    <footer>
-        <p>© 2025 Klub GTA 5 Online – Wszystkie prawa zastrzeżone</p>
-    </footer>
+<footer>
+<p>© 2025 Klub GTA 5 Online – Wszystkie prawa zastrzeżone</p>
+</footer>
 
-    <script>
-        function generateCode(length = 5) {
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            let code = '';
-            for (let i = 0; i < length; i++) {
-                code += chars.charAt(Math.floor(Math.random() * chars.length));
-            }
-            return code;
+<script>
+function generateCode(length = 5) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let code = '';
+    for (let i = 0; i < length; i++) {
+        code += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return code;
+}
+
+document.getElementById('verificationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    let allAnswered = true;
+    for (let i = 1; i <=5; i++) {
+        if (!form['q'+i].value) {
+            allAnswered = false;
+            break;
         }
-
-        document.getElementById('verificationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Sprawdzenie, czy wszystkie pytania są zaznaczone
-            const form = e.target;
-            let allAnswered = true;
-            for (let i = 1; i <= 5; i++) {
-                if (!form['q'+i].value) {
-                    allAnswered = false;
-                    break;
-                }
-            }
-
-            if(!allAnswered) {
-                alert("Proszę odpowiedzieć na wszystkie pytania.");
-                return;
-            }
-
-            // Generowanie unikalnego 5-znakowego kodu
-            const uniqueCode = generateCode();
-            
-            // Wyświetlenie wyniku
-            document.getElementById('result').innerHTML = `
-                ✅ Weryfikacja zakończona pomyślnie!<br>
-                Twój unikalny kod rekrutacyjny: <b>${uniqueCode}</b>
-            `;
-        });
-    </script>
+    }
+    if(!allAnswered) {
+        alert("Proszę odpowiedzieć na wszystkie pytania.");
+        return;
+    }
+    const uniqueCode = generateCode();
+    document.getElementById('result').innerHTML = `
+        ✅ Weryfikacja zakończona pomyślnie!<br>
+        Twój unikalny kod rekrutacyjny: <b>${uniqueCode}</b>
+    `;
+});
+</script>
 </body>
 </html>
+
