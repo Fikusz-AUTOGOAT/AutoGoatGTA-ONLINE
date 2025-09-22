@@ -25,14 +25,25 @@
         Znajdziesz tu filmy, informacje o nas i wiele więcej!
     </p>
 
-    <div class="club-image">
-    <img src="ATGOAT.png" alt="Nasz klub GTA 5 Online">
+<div class="club-image">
+    <img src="ATGOAT.png" alt="Nasz klub GTA 5 Online" id="clubImg">
 </div>
 
-<!-- Statystyki YouTube -->
 <div id="yt-stats">
-    <p>Ładowanie statystyk...</p>
-    </div>
+    <p>Wyświetlenia: <span id="views">0</span></p>
+    <p>Polubienia: <span id="likes">0</span> 
+       <button id="likeBtn">👍</button>
+       <span id="dislikes">0</span> 
+       <button id="dislikeBtn">👎</button>
+    </p>
+</div>
+
+<div id="comments-section">
+    <h3>Komentarze</h3>
+    <input type="text" id="commentInput" placeholder="Napisz komentarz...">
+    <button id="commentBtn">Dodaj komentarz</button>
+    <ul id="commentsList"></ul>
+</div>
 </section>
 
 <footer>
@@ -40,6 +51,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
