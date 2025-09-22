@@ -16,16 +16,16 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
-    border-bottom: 3px solid #ff3399;
-    box-shadow: 0 4px 10px rgba(255, 0, 153, 0.2);
+    border-bottom: 3px solid #3399ff;
+    box-shadow: 0 4px 10px rgba(51,153,255,0.2);
     border-radius: 0 0 15px 15px;
 }
 
 header h1 {
     margin: 0;
     font-size: 2.2em;
-    color: #ff3399;
-    text-shadow: 0 0 10px #ff3399;
+    color: #3399ff;
+    text-shadow: 0 0 10px #3399ff;
 }
 
 nav {
@@ -43,8 +43,8 @@ nav a {
 }
 
 nav a:hover {
-    background: rgba(255,51,153,0.2);
-    color: #ff3399;
+    background: rgba(51,153,255,0.2);
+    color: #3399ff;
 }
 
 /* ============================= */
@@ -60,9 +60,9 @@ section {
 /* Nagłówki sekcji */
 h2 {
     font-size: 2.3em;
-    color: #ff3399;
+    color: #3399ff;
     margin-bottom: 25px;
-    text-shadow: 0 0 8px rgba(255,51,153,0.5);
+    text-shadow: 0 0 8px rgba(51,153,255,0.5);
 }
 
 /* ============================= */
@@ -73,7 +73,7 @@ h2 {
     padding: 25px;
     margin: 25px auto;
     border-radius: 20px;
-    box-shadow: 0 0 25px rgba(255,0,153,0.3);
+    box-shadow: 0 0 25px rgba(51,153,255,0.3);
     max-width: 750px;
     text-align: left;
     animation: fadeInUp 1s ease-in-out;
@@ -82,11 +82,11 @@ h2 {
 
 .about-card:hover {
     transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 0 35px rgba(255, 0, 153, 0.7);
+    box-shadow: 0 0 35px rgba(51,153,255,0.7);
 }
 
 .about-card h3 {
-    color: #ff3399;
+    color: #3399ff;
     margin-bottom: 12px;
 }
 
@@ -103,7 +103,7 @@ h2 {
     max-width: 850px;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 0 30px rgba(255,0,153,0.4);
+    box-shadow: 0 0 30px rgba(51,153,255,0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -115,7 +115,7 @@ h2 {
 
 .yt-video:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 45px rgba(255,0,153,0.7);
+    box-shadow: 0 0 45px rgba(51,153,255,0.7);
 }
 
 /* ============================= */
@@ -130,13 +130,13 @@ h2 {
     width: 90%;
     max-width: 850px;
     border-radius: 25px;
-    box-shadow: 0 0 35px rgba(255,0,153,0.6);
+    box-shadow: 0 0 35px rgba(51,153,255,0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .club-image img:hover {
     transform: scale(1.04) rotate(-1deg);
-    box-shadow: 0 0 50px rgba(255,0,153,0.9);
+    box-shadow: 0 0 50px rgba(51,153,255,0.9);
 }
 
 /* ============================= */
@@ -148,12 +148,12 @@ h2 {
     padding: 25px;
     background: rgba(255,255,255,0.05);
     border-radius: 20px;
-    box-shadow: 0 0 35px rgba(255,0,153,0.4);
+    box-shadow: 0 0 35px rgba(51,153,255,0.4);
     text-align: left;
 }
 
 .verification-container h2 {
-    color: #ff3399;
+    color: #3399ff;
     margin-bottom: 25px;
     text-align: center;
 }
@@ -179,13 +179,13 @@ h2 {
 }
 
 .question label:hover {
-    color: #ff3399;
+    color: #3399ff;
 }
 
 button {
     padding: 14px 28px;
     font-size: 1.05em;
-    background: #ff3399;
+    background: #3399ff;
     color: #fff;
     border: none;
     border-radius: 15px;
@@ -194,7 +194,7 @@ button {
 }
 
 button:hover {
-    background: #ff66bb;
+    background: #66b3ff;
     transform: scale(1.05);
 }
 
@@ -224,9 +224,9 @@ button:hover {
 footer {
     background: #111;
     padding: 25px;
-    border-top: 3px solid #ff3399;
+    border-top: 3px solid #3399ff;
     border-radius: 15px 15px 0 0;
-    box-shadow: 0 -4px 10px rgba(255,0,153,0.2);
+    box-shadow: 0 -4px 10px rgba(51,153,255,0.2);
 }
 
 
