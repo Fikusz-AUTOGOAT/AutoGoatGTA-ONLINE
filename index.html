@@ -3,83 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klub GTA 5</title>
+    <title>FS25 Community</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>KLUB GTA 5</h1>
-            <p>Najlepsza społeczność Los Santos</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#about">O nas</a></li>
-                <li><a href="#gallery">Galeria</a></li>
-                <li><a href="#members">Członkowie</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
+        <h1>FS25 Community</h1>
+        <p>Witamy w społeczności Farming Simulator 25!</p>
     </header>
 
-    <section id="hero">
-        <div class="hero-text">
-            <h2>Dołącz do naszego klubu!</h2>
-            <p>Graj z najlepszymi graczami GTA 5 i baw się w świecie Los Santos!</p>
-            <a href="#contact" class="btn">Skontaktuj się z nami</a>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2>O nas</h2>
-        <p>Jesteśmy profesjonalnym klubem graczy GTA 5. Organizujemy eventy, wyścigi i wspólne misje. Dołącz do naszej społeczności i pokaż swoje umiejętności!</p>
-    </section>
+    <nav>
+        <ul>
+            <li><a href="#gallery">Galeria</a></li>
+            <li><a href="#news">Aktualności</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
 
     <section id="gallery">
-        <h2>Galeria</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">Obrazek 1</div>
-            <div class="gallery-item">Obrazek 2</div>
-            <div class="gallery-item">Obrazek 3</div>
-            <div class="gallery-item">Obrazek 4</div>
+        <h2>Galeria zdjęć</h2>
+        <div class="gallery-container">
+            <img src="images/foto1.jpg" alt="Zdjęcie 1">
+            <img src="images/foto2.jpg" alt="Zdjęcie 2">
+            <img src="images/foto3.jpg" alt="Zdjęcie 3">
         </div>
     </section>
 
-    <section id="members">
-        <h2>Członkowie</h2>
-        <div class="members-grid">
-            <div class="member-card">
-                <div class="avatar">Avatar</div>
-                <h3>Fikusz</h3>
-                <p>Ranga: VIP</p>
-            </div>
-            <div class="member-card">
-                <div class="avatar">Avatar</div>
-                <h3>Gracz2</h3>
-                <p>Ranga: Elite</p>
-            </div>
-            <div class="member-card">
-                <div class="avatar">Avatar</div>
-                <h3>Gracz3</h3>
-                <p>Ranga: Pro</p>
-            </div>
-        </div>
+    <section id="news">
+        <h2>Aktualności</h2>
+        <article>
+            <h3>Nowa aktualizacja FS25!</h3>
+            <p>Dodano nowe maszyny i mapy. Sprawdź wszystkie nowości w grze!</p>
+        </article>
+        <article>
+            <h3>Turniej społeczności</h3>
+            <p>Zapraszamy wszystkich do udziału w naszym turnieju online.</p>
+        </article>
     </section>
 
     <section id="contact">
         <h2>Kontakt</h2>
-        <p>Skontaktuj się z nami przez Discord lub email.</p>
         <form>
-            <input type="text" placeholder="Twoje imię" required>
-            <input type="email" placeholder="Twój email" required>
-            <textarea placeholder="Wiadomość" required></textarea>
+            <label for="name">Imię:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Wiadomość:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
             <button type="submit">Wyślij</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy; 2025 Klub GTA 5. Wszelkie prawa zastrzeżone.</p>
+        <p>© 2025 FS25 Community</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
