@@ -3,155 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klub GTA 5 Online</title>
+    <title>Klub GTA 5 Online – Oficjalna Strona</title>
     <style>
+        /* Ogólny styl strony */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #f1f1f1;
+            background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
         }
 
         header {
-            background-color: #1f1f1f;
+            background: #111;
             padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #ff4747;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 2px solid #ff0055;
         }
 
         header h1 {
             margin: 0;
-            color: #ff4747;
+            font-size: 2em;
+            color: #ff0055;
         }
 
         nav {
-            display: flex;
-            justify-content: center;
-            background-color: #222;
-            border-bottom: 1px solid #444;
+            margin-top: 10px;
         }
 
         nav a {
-            color: #f1f1f1;
+            color: #fff;
+            margin: 0 15px;
             text-decoration: none;
-            padding: 15px 20px;
-            display: block;
-            transition: 0.3s;
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            background-color: #ff4747;
-            color: #fff;
-        }
-
-        main {
-            padding: 20px;
-            max-width: 1000px;
-            margin: auto;
+            color: #ff0055;
         }
 
         section {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.6s ease-in-out;
+            padding: 60px 20px;
+            min-height: 80vh;
+            animation: fadeIn 1s ease-in-out;
         }
 
-        section.active {
-            display: block;
-            opacity: 1;
+        h2 {
+            font-size: 2em;
+            color: #ff0055;
+            margin-bottom: 20px;
         }
 
-        .yt-video {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        iframe {
-            width: 100%;
+        /* Karty w sekcji O nas */
+        .about-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
             max-width: 700px;
-            height: 400px;
+            text-align: left;
+            animation: fadeInUp 1s ease-in-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 25px rgba(255, 0, 100, 0.7);
+        }
+
+        .about-card h3 {
+            color: #ff0055;
+            margin-bottom: 10px;
+        }
+
+        .about-card p {
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+
+        /* Filmy YouTube */
+        .yt-video {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .yt-video iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 10px;
             border: none;
+            box-shadow: 0 0 15px rgba(0,0,0,0.7);
+        }
+
+        /* Animacje */
+        @keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         footer {
-            background-color: #1f1f1f;
-            text-align: center;
-            padding: 15px;
-            border-top: 2px solid #ff4747;
-            margin-top: 30px;
+            background: #111;
+            padding: 20px;
+            border-top: 2px solid #ff0055;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Klub GTA 5 Online</h1>
-        <p>Oficjalna strona naszego klubu i kanału YouTube</p>
+        <h1>🔥 Klub GTA 5 Online 🔥</h1>
+        <nav>
+            <a href="#home">Strona Główna</a>
+            <a href="#about">O nas</a>
+            <a href="#videos">Filmy YouTube</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#" onclick="showSection('home')">Strona Główna</a>
-        <a href="#" onclick="showSection('about')">O Nas</a>
-        <a href="#" onclick="showSection('videos')">Filmy YouTube</a>
-        <a href="#" onclick="showSection('contact')">Kontakt</a>
-    </nav>
+    <section id="home">
+        <h2>Witamy w naszym klubie!</h2>
+        <p>
+            To jest oficjalna strona naszego klubu GTA 5 Online.  
+            Znajdziesz tu filmy, informacje o nas i wiele więcej!
+        </p>
+    </section>
 
-    <main>
-        <section id="home" class="active">
-            <h2>Witaj w naszym klubie GTA V Online!</h2>
-            <p>Tu znajdziesz wszystkie informacje o naszym klubie oraz nasz content z YouTube. 
-            Dołącz do nas i baw się razem w świecie GTA V Online!</p>
-        </section>
+    <section id="about">
+        <h2>O nas</h2>
+        <div class="about-card">
+            <h3>👑 Fikusz – Właściciel Klubu i Strony</h3>
+            <p>
+                Założyciel i lider klubu GTA 5 Online.  
+                Odpowiada za organizację wydarzeń, tworzenie filmów na YouTube 
+                oraz rozwój całej społeczności.  
+                Dzięki niemu klub działa jak prawdziwa rodzina graczy – zawsze razem, zawsze aktywnie. 🚀
+            </p>
+        </div>
 
-        <section id="about">
-            <h2>O Nas</h2>
-            <p>Właściciele klubu i strony:</p>
-            <ul>
-                <li><b>Pomidorek</b> – Założyciel klubu</li>
-                <li><b>Adam</b> – Współwłaściciel</li>
-                <li><b>Kuba</b> – Moderator</li>
-            </ul>
-        </section>
+        <div class="about-card">
+            <h3>🎮 Członkowie klubu</h3>
+            <p>
+                Nasz zespół składa się z pasjonatów GTA, którzy wspólnie tworzą 
+                epickie akcje w grze, nagrywają materiały i bawią się w wielkim stylu.  
+                Dołączając do nas, stajesz się częścią wyjątkowej ekipy.
+            </p>
+        </div>
+    </section>
 
-        <section id="videos">
-            <h2>Filmy z YouTube</h2>
+    <section id="videos">
+        <h2>Filmy z YouTube</h2>
 
-            <p><b>🎵 Budda – Top Banndyta</b></p>
-            <div class="yt-video">
-                <iframe src="https://www.youtube.com/embed/3KeBwbwMSn0" allowfullscreen></iframe>
-            </div>
+        <p><b>🎵 Budda – Top Banndyta</b></p>
+        <div class="yt-video">
+            <iframe src="https://www.youtube.com/embed/3KeBwbwMSn0" allowfullscreen></iframe>
+        </div>
 
-            <p><b>🎬 Mój film:</b></p>
-            <div class="yt-video">
-                <iframe src="https://www.youtube.com/embed/E7vnNHGa_FE" allowfullscreen></iframe>
-            </div>
-        </section>
+        <p><b>🎬 Mój film:</b></p>
+        <div class="yt-video">
+            <iframe src="https://www.youtube.com/embed/E7vnNHGa_FE" allowfullscreen></iframe>
+        </div>
+    </section>
 
-        <section id="contact">
-            <h2>Kontakt</h2>
-            <p>Masz pytania? Skontaktuj się z nami:</p>
-            <p>Email: <a href="mailto:twojemail@example.com">twojemail@example.com</a></p>
-            <p>Discord: <b>discord.gg/twójserwer</b></p>
-        </section>
-    </main>
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <p>
+            📧 Email: fikusz.klubgta@example.com <br>
+            🎮 Discord: Fikusz#1234
+        </p>
+    </section>
 
     <footer>
-        <p>&copy; 2025 Klub GTA 5 Online – Wszystkie prawa zastrzeżone</p>
+        <p>© 2025 Klub GTA 5 Online – Wszystkie prawa zastrzeżone</p>
     </footer>
-
-    <script>
-        function showSection(id) {
-            let sections = document.querySelectorAll("section");
-
-            sections.forEach(s => {
-                if (s.id === id) {
-                    s.style.display = "block";
-                    setTimeout(() => s.classList.add("active"), 10);
-                } else {
-                    s.classList.remove("active");
-                    setTimeout(() => s.style.display = "none", 600);
-                }
-            });
-        }
-    </script>
 </body>
 </html>
+
+
