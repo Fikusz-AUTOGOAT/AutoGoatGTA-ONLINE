@@ -113,7 +113,6 @@ toggle.addEventListener('change', () => {
 
     <section id="contact">
 
-<!-- Sekcja główna z modami -->
 <section id="mody">
   <h2>Mody do pobrania</h2>
 
@@ -122,65 +121,18 @@ toggle.addEventListener('change', () => {
       <img src="mod1.jpg" alt="Mod 1 screen">
       <h3>Paczka PGR mod FS25</h3>
       <p>Opis: Paczka PGR to paczka która zawiera mody typu ursusy, stare hale itp.</p>
-      <button onclick="showModDetails('mod1')">Sprawdź</button>
+      <!-- Kliknięcie przenosi do osobnej strony -->
+      <a href="mod1.html"><button>Sprawdź</button></a>
     </div>
   </div>
 </section>
-
-<!-- Sekcja szczegółowa moda (ukryta) -->
-<section id="mod-details" style="display:none;">
-  <button onclick="backToMods()">⬅ Wróć</button>
-  <h2 id="mod-title"></h2>
-  <div id="mod-images"></div>
-  <p id="mod-description"></p>
-  <a id="mod-download" href="" download>Pobierz</a>
-</section>
-
-<script>
-const modsData = {
-  mod1: {
-    title: "Paczka PGR mod FS25",
-    description: "Paczka PGR to paczka która zawiera mody typu ursusy, stare hale itp.",
-    images: ["mod1.jpg"], // tutaj możesz dodać więcej obrazków
-    download: "uniaspecial3.zip"
-  }
-};
-
-function showModDetails(modId) {
-  const mod = modsData[modId];
-  document.getElementById('mody').style.display = 'none';
-  document.getElementById('mod-details').style.display = 'block';
-  document.getElementById('mod-title').innerText = mod.title;
-  document.getElementById('mod-description').innerText = mod.description;
-
-  // Wstawiamy obrazki
-  const imagesContainer = document.getElementById('mod-images');
-  imagesContainer.innerHTML = '';
-  mod.images.forEach(src => {
-    const img = document.createElement('img');
-    img.src = src;
-    img.style.width = "300px"; // dopasuj do stylu
-    img.style.margin = "10px";
-    imagesContainer.appendChild(img);
-  });
-
-  // Ustawiamy przycisk pobierz
-  const downloadBtn = document.getElementById('mod-download');
-  downloadBtn.href = mod.download;
-}
-
-function backToMods() {
-  document.getElementById('mod-details').style.display = 'none';
-  document.getElementById('mody').style.display = 'block';
-}
-</script>
-
 
     <script src="script.js"></script>
 
 <footer> <p>© 2025 FS25 Community | Wszystkie prawa zastrzeżone</p> </footer>
 </body>
 </html>
+
 
 
 
