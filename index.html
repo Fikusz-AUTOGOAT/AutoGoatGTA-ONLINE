@@ -1,57 +1,128 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klub GTA 5 Online</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapy Style</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #1f1f1f;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 24px;
+        color: #ff4500;
+    }
+    nav a {
+        color: #fff;
+        margin-left: 20px;
+        text-decoration: none;
+    }
+    nav a:hover {
+        text-decoration: underline;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    .post {
+        background-color: #1e1e1e;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
+    .post img {
+        max-width: 100%;
+        border-radius: 5px;
+    }
+    .post .actions {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .post .actions button {
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    .post .actions span {
+        margin-right: 15px;
+    }
+</style>
 </head>
 <body>
+
 <header>
-    <h1>🔥 Witamy w naszym klubie GTA 5 Online 🔥</h1>
+    <h1>RapyStyle</h1>
     <nav>
-        <a href="index.html">Strona Główna</a>
-        <a href="about.html">O nas</a>
-        <a href="videos.html">Filmy YouTube</a>
-        <a href="contact.html">Kontakt</a>
-        <a href="verification.html">Weryfikacja</a>
+        <a href="#">Strona Główna</a>
+        <a href="#">Nowe</a>
+        <a href="#">Popularne</a>
+        <a href="#">Kategorie</a>
     </nav>
 </header>
 
-<section>
-    <h2>Oficjalna strona naszego klubu</h2>
-    <p>
-        To jest oficjalna strona naszego klubu GTA 5 Online.  
-        Znajdziesz tu filmy, informacje o nas i wiele więcej!
-    </p>
+<div class="container">
+    <div class="post">
+        <h2>Tytuł posta</h2>
+        <img src="https://via.placeholder.com/800x400" alt="Post Image">
+        <div class="actions">
+            <button onclick="like(this)">👍</button> <span>0</span>
+            <button onclick="dislike(this)">👎</button> <span>0</span>
+            <button onclick="comment(this)">💬</button> <span>0</span>
+        </div>
+    </div>
 
-<div class="club-image">
-    <img src="ATGOAT.png" alt="Nasz klub GTA 5 Online" id="clubImg">
+    <div class="post">
+        <h2>Drugi post</h2>
+        <img src="https://via.placeholder.com/800x400" alt="Post Image">
+        <div class="actions">
+            <button onclick="like(this)">👍</button> <span>0</span>
+            <button onclick="dislike(this)">👎</button> <span>0</span>
+            <button onclick="comment(this)">💬</button> <span>0</span>
+        </div>
+    </div>
 </div>
 
-<div id="yt-stats">
-    <p>Wyświetlenia: <span id="views">0</span></p>
-    <p>Polubienia: <span id="likes">0</span> 
-       <button id="likeBtn">👍</button>
-       <span id="dislikes">0</span> 
-       <button id="dislikeBtn">👎</button>
-    </p>
-</div>
+<script>
+function like(btn){
+    let count = btn.nextElementSibling;
+    count.textContent = parseInt(count.textContent) + 1;
+}
 
-<div id="comments-section">
-    <h3>Komentarze</h3>
-    <input type="text" id="commentInput" placeholder="Napisz komentarz...">
-    <button id="commentBtn">Dodaj komentarz</button>
-    <ul id="commentsList"></ul>
-    <script src="script.js"></script>
-</div>
-</section>
+function dislike(btn){
+    let count = btn.nextElementSibling;
+    count.textContent = parseInt(count.textContent) + 1;
+}
 
-<footer>
-    <p>© 2025 Klub GTA 5 Online – Wszystkie prawa zastrzeżone</p>
-</footer>
+function comment(btn){
+    let count = btn.nextElementSibling;
+    let userComment = prompt("Dodaj komentarz:");
+    if(userComment){
+        count.textContent = parseInt(count.textContent) + 1;
+        alert("Komentarz dodany: " + userComment);
+    }
+}
+</script>
+
 </body>
 </html>
+
+
 
 
 
