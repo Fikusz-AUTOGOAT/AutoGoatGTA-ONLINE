@@ -1,3 +1,4 @@
-// Prosty skrypt do powitania użytkownika
-console.log("Witamy w społeczności FS25!");
+// Możesz dodać interaktywność w przyszłości
+console.log("FS25 Community - strona gotowa!");
+
 
