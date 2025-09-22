@@ -3,124 +3,195 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rapy Style</title>
+<title>GTA Online Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #121212;
-        color: #fff;
-        margin: 0;
-        padding: 0;
-    }
+    /* --- RESET --- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background-color: #121212; color: #fff; }
+
+    /* --- HEADER --- */
     header {
-        background-color: #1f1f1f;
-        padding: 15px 20px;
+        background-color: #1c1c1c;
+        padding: 20px 40px;
         display: flex;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #ff0000;
     }
-    header h1 {
-        margin: 0;
-        font-size: 24px;
-        color: #ff4500;
-    }
+    header h1 { font-family: 'Orbitron', sans-serif; color: #ff0000; font-size: 32px; }
     nav a {
         color: #fff;
-        margin-left: 20px;
+        margin-left: 25px;
         text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
     }
-    nav a:hover {
-        text-decoration: underline;
+    nav a:hover { color: #ff0000; }
+
+    /* --- HERO SECTION --- */
+    .hero {
+        background: url('https://images.unsplash.com/photo-1602524208462-85c9b9a8f09c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NzYyfDB8MHxzZWFyY2h8M3x8Z3RhJTIwb25saW5lfGVufDB8fDB8fHww&ixlib=rb-4.0.3&q=80&w=1400') center/cover no-repeat;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
-    .container {
-        max-width: 1000px;
-        margin: 20px auto;
-        padding: 0 15px;
+    .hero h2 {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 48px;
+        color: #fff;
+        background-color: rgba(0,0,0,0.5);
+        padding: 20px 40px;
+        border-radius: 10px;
     }
-    .post {
+
+    /* --- MAIN CONTENT --- */
+    .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+
+    /* --- Sekcja o klubie --- */
+    .about {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        align-items: center;
+    }
+    .about img { flex: 1 1 400px; border-radius: 10px; }
+    .about-text { flex: 1 1 400px; }
+    .about-text h3 { font-size: 28px; color: #ff0000; margin-bottom: 15px; }
+    .about-text p { line-height: 1.6; }
+
+    /* --- Sekcja Członkowie --- */
+    .members {
+        margin-top: 60px;
+    }
+    .members h3 { font-size: 32px; color: #ff0000; margin-bottom: 20px; text-align: center; }
+    .member-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+    .member-card {
         background-color: #1e1e1e;
         padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 8px;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
     }
-    .post img {
-        max-width: 100%;
-        border-radius: 5px;
+    .member-card:hover { transform: scale(1.05); border: 2px solid #ff0000; }
+    .member-card img { width: 100px; height: 100px; border-radius: 50%; margin-bottom: 10px; }
+    .member-card h4 { font-size: 18px; }
+
+    /* --- Sekcja Galerie --- */
+    .gallery {
+        margin-top: 60px;
     }
-    .post .actions {
-        display: flex;
-        align-items: center;
-        margin-top: 10px;
-    }
-    .post .actions button {
-        background: none;
-        border: none;
-        color: #fff;
+    .gallery h3 { font-size: 32px; color: #ff0000; margin-bottom: 20px; text-align: center; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+    .gallery-grid img {
+        width: 100%;
+        border-radius: 10px;
         cursor: pointer;
-        margin-right: 10px;
+        transition: 0.3s;
     }
-    .post .actions span {
-        margin-right: 15px;
+    .gallery-grid img:hover { transform: scale(1.05); }
+
+    /* --- Lightbox --- */
+    #lightbox {
+        position: fixed;
+        display: none;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.9);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+    #lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; }
+
+    /* --- Footer --- */
+    footer {
+        background-color: #1c1c1c;
+        text-align: center;
+        padding: 20px;
+        margin-top: 60px;
+        border-top: 2px solid #ff0000;
     }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>RapyStyle</h1>
+    <h1>GTA Online Club</h1>
     <nav>
-        <a href="#">Strona Główna</a>
-        <a href="#">Nowe</a>
-        <a href="#">Popularne</a>
-        <a href="#">Kategorie</a>
+        <a href="#about">O klubie</a>
+        <a href="#members">Członkowie</a>
+        <a href="#gallery">Galeria</a>
+        <a href="#contact">Kontakt</a>
     </nav>
 </header>
 
-<div class="container">
-    <div class="post">
-        <h2>Tytuł posta</h2>
-        <img src="https://via.placeholder.com/800x400" alt="Post Image">
-        <div class="actions">
-            <button onclick="like(this)">👍</button> <span>0</span>
-            <button onclick="dislike(this)">👎</button> <span>0</span>
-            <button onclick="comment(this)">💬</button> <span>0</span>
-        </div>
-    </div>
+<section class="hero">
+    <h2>Witamy w naszym klubie GTA Online</h2>
+</section>
 
-    <div class="post">
-        <h2>Drugi post</h2>
-        <img src="https://via.placeholder.com/800x400" alt="Post Image">
-        <div class="actions">
-            <button onclick="like(this)">👍</button> <span>0</span>
-            <button onclick="dislike(this)">👎</button> <span>0</span>
-            <button onclick="comment(this)">💬</button> <span>0</span>
+<div class="container">
+    <!-- O klubie -->
+    <section class="about" id="about">
+        <img src="https://images.unsplash.com/photo-1602524208462-85c9b9a8f09c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NzYyfDB8MHxzZWFyY2h8M3x8Z3RhJTIwb25saW5lfGVufDB8fDB8fHww&ixlib=rb-4.0.3&q=80&w=600" alt="O klubie">
+        <div class="about-text">
+            <h3>O naszym klubie</h3>
+            <p>Jesteśmy elitarnym klubem GTA Online. Organizujemy wyścigi, misje, eventy i spotkania wirtualne. Dołącz do nas i poczuj klimat ulic Los Santos! Nasza ekipa to pasjonaci gry, którzy stawiają zabawę i strategię na pierwszym miejscu.</p>
         </div>
-    </div>
+    </section>
+
+    <!-- Członkowie -->
+    <section class="members" id="members">
+        <h3>Nasi członkowie</h3>
+        <div class="member-grid">
+            <div class="member-card"><img src="https://i.pravatar.cc/100?img=1" alt=""><h4>Player1</h4></div>
+            <div class="member-card"><img src="https://i.pravatar.cc/100?img=2" alt=""><h4>Player2</h4></div>
+            <div class="member-card"><img src="https://i.pravatar.cc/100?img=3" alt=""><h4>Player3</h4></div>
+            <div class="member-card"><img src="https://i.pravatar.cc/100?img=4" alt=""><h4>Player4</h4></div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section class="gallery" id="gallery">
+        <h3>Galeria akcji</h3>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1618160797035-47f8f92c4f2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600" alt="">
+            <img src="https://images.unsplash.com/photo-1618160797035-47f8f92c4f2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600" alt="">
+            <img src="https://images.unsplash.com/photo-1618160797035-47f8f92c4f2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600" alt="">
+            <img src="https://images.unsplash.com/photo-1618160797035-47f8f92c4f2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600" alt="">
+        </div>
+    </section>
 </div>
 
+<!-- Lightbox -->
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="">
+</div>
+
+<footer>
+    &copy; 2025 GTA Online Club. Wszystkie prawa zastrzeżone.
+</footer>
+
 <script>
-function like(btn){
-    let count = btn.nextElementSibling;
-    count.textContent = parseInt(count.textContent) + 1;
-}
+// Lightbox
+const images = document.querySelectorAll('.gallery-grid img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
 
-function dislike(btn){
-    let count = btn.nextElementSibling;
-    count.textContent = parseInt(count.textContent) + 1;
-}
-
-function comment(btn){
-    let count = btn.nextElementSibling;
-    let userComment = prompt("Dodaj komentarz:");
-    if(userComment){
-        count.textContent = parseInt(count.textContent) + 1;
-        alert("Komentarz dodany: " + userComment);
-    }
-}
+images.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+    });
+});
 </script>
 
 </body>
 </html>
+
+
 
 
 
