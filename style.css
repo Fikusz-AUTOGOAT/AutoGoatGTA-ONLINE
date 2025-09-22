@@ -1,4 +1,6 @@
-/* Ogólny styl strony */
+/* ============================= */
+/* Ogólny styl strony            */
+/* ============================= */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -51,7 +53,9 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Karty w sekcji O nas */
+/* ============================= */
+/* Karty w sekcji O nas          */
+/* ============================= */
 .about-card {
     background: rgba(255, 255, 255, 0.05);
     padding: 20px;
@@ -79,7 +83,9 @@ h2 {
     font-size: 1.1em;
 }
 
-/* Filmy YouTube */
+/* ============================= */
+/* Filmy YouTube                 */
+/* ============================= */
 .yt-video {
     margin: 20px auto;
     max-width: 800px;
@@ -93,7 +99,30 @@ h2 {
     box-shadow: 0 0 15px rgba(0,0,0,0.7);
 }
 
-/* Animacje */
+/* ============================= */
+/* Obrazek klubu na stronie głównej */
+/* ============================= */
+.club-image {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.club-image img {
+    width: 90%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 0, 100, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.club-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 40px rgba(255, 0, 100, 0.9);
+}
+
+/* ============================= */
+/* Animacje                      */
+/* ============================= */
 @keyframes fadeIn {
     0% {opacity: 0;}
     100% {opacity: 1;}
@@ -104,8 +133,12 @@ h2 {
     100% { opacity: 1; transform: translateY(0); }
 }
 
+/* ============================= */
+/* Stopka                        */
+/* ============================= */
 footer {
     background: #111;
     padding: 20px;
     border-top: 2px solid #ff0055;
 }
+
