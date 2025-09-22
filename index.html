@@ -5,6 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FS25 Community</title>
     <link rel="stylesheet" href="style.css">
+<!-- Suwak muzyki w prawym dolnym rogu -->
+<div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+  <label class="switch">
+    <input type="checkbox" id="music-toggle">
+    <span class="slider"></span>
+  </label>
+</div>
+
+<!-- Audio -->
+<audio id="bg-music" loop>
+  <source src="muzyka.mp3" type="audio/mpeg">
+  Twoja przeglądarka nie obsługuje audio.
+</audio>
+
+<!-- Style suwaka -->
+<style>
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+</style>
+
+<!-- Skrypt włącz/wyłącz -->
+<script>
+const music = document.getElementById('bg-music');
+const toggle = document.getElementById('music-toggle');
+
+toggle.addEventListener('change', () => {
+  if(toggle.checked) {
+    music.play();
+  } else {
+    music.pause();
+  }
+});
+</script>
+
 </head>
 <body>
     <header>
@@ -51,14 +122,6 @@
       <h3>Paczka PGR mod FS25</h3>
       <p>Opis: Paczka PGR to paczka która zawiera mody typu ursusy, stare hale itp.</p>
       <a class="download" href="uniaspecial3.zip" download>Pobierz</a>
-
-<button onclick="document.getElementById('bg-music').play()">🎵 Włącz muzykę</button>
-
-<audio id="bg-music" loop>
-  <source src="muzyka.mp3" type="audio/mpeg">
-  Twoja przeglądarka nie obsługuje audio.
-</audio>
-
     </div>
   </div>
 </section>
@@ -68,6 +131,7 @@
 <footer> <p>© 2025 FS25 Community | Wszystkie prawa zastrzeżone</p> </footer>
 </body>
 </html>
+
 
 
 
