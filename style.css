@@ -121,6 +121,71 @@ h2 {
 }
 
 /* ============================= */
+/* Weryfikacja (formularz)       */
+/* ============================= */
+.verification-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255,0,100,0.5);
+    text-align: left;
+}
+
+.verification-container h2 {
+    color: #ff0055;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.question {
+    margin-bottom: 25px;
+}
+
+.question p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.question label {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.question input[type="radio"] {
+    margin-right: 10px;
+}
+
+.question label:hover {
+    color: #ff0055;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1em;
+    background: #ff0055;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #ff3388;
+}
+
+#result {
+    margin-top: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00ff99;
+}
+
+/* ============================= */
 /* Animacje                      */
 /* ============================= */
 @keyframes fadeIn {
