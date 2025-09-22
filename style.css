@@ -179,3 +179,54 @@ footer {
     margin-top: 60px;
     border-top: 2px solid #222;
 }
+
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+nav {
+  margin: 20px;
+}
+
+nav a {
+  color: #0f0;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.mod {
+  background: #222;
+  padding: 20px;
+  margin: 20px auto;
+  width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #000;
+}
+
+.mod img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.download {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #0f0;
+  color: #000;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.download:hover {
+  background: #5f5;
+}
+
