@@ -1,53 +1,92 @@
-/* Galeria - nowoczesna siatka */
-section#gallery {
+/* Globalne tło i tekst */
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Sekcje */
+section {
     padding: 60px 20px;
-    text-align: center;
-    background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
-    color: #fff;
-}
-
-section#gallery h2 {
-    font-size: 2.5em;
-    color: #ffcc00;
-    margin-bottom: 40px;
-}
-
-/* Siatka galerii */
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    margin: 40px auto;
     max-width: 1200px;
-    margin: auto;
-}
-
-/* Karta zdjęcia */
-.gallery-item {
-    background-color: #333;
     border-radius: 15px;
+    background: #222;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Nagłówki sekcji */
+section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    text-align: center;
+}
+
+/* Aktualności */
+.news-container article {
+    background: #2c2c2c;
     padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: #ddd;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.news-container article:hover {
+    background: #333;
+}
+
+/* Formularz kontaktowy */
+form {
+    background: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-    height: 200px;
-    position: relative;
-    overflow: hidden;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
 }
 
-/* Efekt hover */
-.gallery-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
-    background: linear-gradient(135deg, #444, #555);
-}
-
-/* Placeholder tekst */
-.gallery-item::after {
-    content: attr(data-placeholder);
+form label {
+    text-align: left;
     color: #ccc;
-    font-size: 1.1em;
-    position: absolute;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background: #444;
+    color: #fff;
+    font-size: 1em;
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid #ffcc00;
+}
+
+/* Guzik */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #ffcc00;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffaa00;
+}
+
+/* Stopka */
+footer {
+    background: #111;
+    color: #777;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
 }
