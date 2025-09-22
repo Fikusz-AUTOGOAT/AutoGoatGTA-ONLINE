@@ -1,102 +1,53 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GTA Online Club</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klub GTA 5</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header>
-    <h1>GTA Online Club</h1>
-    <nav>
-        <a href="#about">O klubie</a>
-        <a href="#members">Członkowie</a>
-        <a href="#gallery">Galeria</a>
-        <a href="#contact">Kontakt</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <h2>Witamy w naszym klubie GTA Online</h2>
-</section>
-
-<div class="container">
-    <!-- O klubie -->
-    <section class="about" id="about">
-        <img src="club.png" alt="O klubie">
-        <div class="about-text">
-            <h3>O naszym klubie</h3>
-            <p>Jesteśmy elitarnym klubem GTA Online. Organizujemy wyścigi, misje, eventy i spotkania wirtualne. Dołącz do nas i poczuj klimat ulic Los Santos! Nasza ekipa to pasjonaci gry, którzy stawiają zabawę i strategię na pierwszym miejscu.</p>
+    <header>
+        <div class="logo">
+            <h1>KLUB GTA 5</h1>
         </div>
+        <nav>
+            <ul>
+                <li><a href="#about">O nas</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#members">Członkowie</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>O nas</h2>
+        <p>Witamy w naszym klubie GTA 5! Jesteśmy społecznością graczy, którzy kochają świat Los Santos.</p>
     </section>
 
-    <!-- Członkowie -->
-    <section class="members" id="members">
-        <h3>Nasi członkowie</h3>
-        <div class="member-grid">
-            <div class="member-card">
-                <img src="fk1.png" alt="Fikusz">
-                <h4>Fikusz</h4>
-                <p>Właściciel</p>
-            </div>
-            <div class="member-card">
-                <img src="mx2.png" alt="Maxelio">
-                <h4>Maxelio</h4>
-                <p>Współwłaściciel</p>
-            </div>
-            <div class="member-card">
-                <img src="player3.png" alt="Player3">
-                <h4>Player3</h4>
-                <p>Członek</p>
-            </div>
-            <div class="member-card">
-                <img src="player4.png" alt="Player4">
-                <h4>Player4</h4>
-                <p>Członek</p>
-            </div>
-        </div>
+    <section id="gallery">
+        <h2>Galeria</h2>
+        <p>Tu pojawią się nasze zdjęcia i grafiki.</p>
     </section>
 
-    <!-- Galeria -->
-    <section class="gallery" id="gallery">
-        <h3>Galeria akcji</h3>
-        <div class="gallery-grid">
-            <img src="img1.png" alt="">
-            <img src="img2.png" alt="">
-            <img src="img3.png" alt="">
-            <img src="img4.png" alt="">
-        </div>
+    <section id="members">
+        <h2>Członkowie</h2>
+        <p>Lista naszych najlepszych graczy i ich statystyki.</p>
     </section>
-</div>
 
-<!-- Lightbox -->
-<div id="lightbox" onclick="this.style.display='none'">
-    <img id="lightbox-img" src="">
-</div>
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <p>Skontaktuj się z nami przez Discord lub email.</p>
+    </section>
 
-<footer>
-    &copy; 2025 GTA Online Club. Wszystkie prawa zastrzeżone.
-</footer>
-
-<script>
-// Lightbox
-const images = document.querySelectorAll('.gallery-grid img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-
-images.forEach(img => {
-    img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-    });
-});
-</script>
-
+    <footer>
+        <p>&copy; 2025 Klub GTA 5</p>
+    </footer>
 </body>
 </html>
+
+
 
 
 
