@@ -3,8 +3,8 @@
 /* ============================= */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
     color: #fff;
     text-align: center;
     overflow-x: hidden;
@@ -16,141 +16,160 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
-    border-bottom: 2px solid #ff0055;
+    border-bottom: 3px solid #ff3399;
+    box-shadow: 0 4px 10px rgba(255, 0, 153, 0.2);
+    border-radius: 0 0 15px 15px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2em;
-    color: #ff0055;
+    font-size: 2.2em;
+    color: #ff3399;
+    text-shadow: 0 0 10px #ff3399;
 }
 
 nav {
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 nav a {
     color: #fff;
-    margin: 0 15px;
+    margin: 0 18px;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
 }
 
 nav a:hover {
-    color: #ff0055;
+    background: rgba(255,51,153,0.2);
+    color: #ff3399;
 }
 
+/* ============================= */
+/* Sekcje strony                 */
+/* ============================= */
 section {
     padding: 60px 20px;
     min-height: 80vh;
     animation: fadeIn 1s ease-in-out;
+    border-radius: 15px;
 }
 
+/* Nagłówki sekcji */
 h2 {
-    font-size: 2em;
-    color: #ff0055;
-    margin-bottom: 20px;
+    font-size: 2.3em;
+    color: #ff3399;
+    margin-bottom: 25px;
+    text-shadow: 0 0 8px rgba(255,51,153,0.5);
 }
 
 /* ============================= */
-/* Karty w sekcji O nas          */
+/* Karty O nas                   */
 /* ============================= */
 .about-card {
     background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    max-width: 700px;
+    padding: 25px;
+    margin: 25px auto;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255,0,153,0.3);
+    max-width: 750px;
     text-align: left;
     animation: fadeInUp 1s ease-in-out;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 0 25px rgba(255, 0, 100, 0.7);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 35px rgba(255, 0, 153, 0.7);
 }
 
 .about-card h3 {
-    color: #ff0055;
-    margin-bottom: 10px;
+    color: #ff3399;
+    margin-bottom: 12px;
 }
 
 .about-card p {
     line-height: 1.6;
-    font-size: 1.1em;
+    font-size: 1.15em;
 }
 
 /* ============================= */
 /* Filmy YouTube                 */
 /* ============================= */
 .yt-video {
-    margin: 20px auto;
-    max-width: 800px;
+    margin: 25px auto;
+    max-width: 850px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255,0,153,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .yt-video iframe {
     width: 100%;
-    height: 450px;
-    border-radius: 10px;
+    height: 480px;
     border: none;
-    box-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+
+.yt-video:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 45px rgba(255,0,153,0.7);
 }
 
 /* ============================= */
 /* Obrazek klubu na stronie głównej */
 /* ============================= */
 .club-image {
-    margin-top: 30px;
+    margin-top: 35px;
     text-align: center;
 }
 
 .club-image img {
     width: 90%;
-    max-width: 800px;
-    border-radius: 15px;
-    box-shadow: 0 0 25px rgba(255, 0, 100, 0.7);
+    max-width: 850px;
+    border-radius: 25px;
+    box-shadow: 0 0 35px rgba(255,0,153,0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .club-image img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 40px rgba(255, 0, 100, 0.9);
+    transform: scale(1.04) rotate(-1deg);
+    box-shadow: 0 0 50px rgba(255,0,153,0.9);
 }
 
 /* ============================= */
-/* Weryfikacja (formularz)       */
+/* Formularz Weryfikacji         */
 /* ============================= */
 .verification-container {
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 20px;
+    max-width: 720px;
+    margin: 50px auto;
+    padding: 25px;
     background: rgba(255,255,255,0.05);
-    border-radius: 15px;
-    box-shadow: 0 0 25px rgba(255,0,100,0.5);
+    border-radius: 20px;
+    box-shadow: 0 0 35px rgba(255,0,153,0.4);
     text-align: left;
 }
 
 .verification-container h2 {
-    color: #ff0055;
-    margin-bottom: 20px;
+    color: #ff3399;
+    margin-bottom: 25px;
     text-align: center;
 }
 
 .question {
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 }
 
 .question p {
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .question label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     cursor: pointer;
     transition: color 0.3s;
 }
@@ -160,27 +179,28 @@ h2 {
 }
 
 .question label:hover {
-    color: #ff0055;
+    color: #ff3399;
 }
 
 button {
-    padding: 12px 25px;
-    font-size: 1em;
-    background: #ff0055;
+    padding: 14px 28px;
+    font-size: 1.05em;
+    background: #ff3399;
     color: #fff;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
 
 button:hover {
-    background: #ff3388;
+    background: #ff66bb;
+    transform: scale(1.05);
 }
 
 #result {
-    margin-top: 30px;
-    font-size: 1.2em;
+    margin-top: 35px;
+    font-size: 1.25em;
     font-weight: bold;
     color: #00ff99;
 }
@@ -203,7 +223,10 @@ button:hover {
 /* ============================= */
 footer {
     background: #111;
-    padding: 20px;
-    border-top: 2px solid #ff0055;
+    padding: 25px;
+    border-top: 3px solid #ff3399;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -4px 10px rgba(255,0,153,0.2);
 }
+
 
