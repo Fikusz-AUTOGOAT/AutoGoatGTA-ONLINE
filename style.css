@@ -23,7 +23,7 @@ nav a:hover { color: #ff0000; }
 
 /* --- HERO SECTION --- */
 .hero {
-    background: url('https://images.unsplash.com/photo-1602524208462-85c9b9a8f09c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1400') center/cover no-repeat;
+    background-color: #222; /* prosty kolor, lokalny, nie z internetu */
     height: 500px;
     display: flex;
     justify-content: center;
@@ -112,5 +112,6 @@ footer {
 @media(max-width:768px){
     .about { flex-direction: column; }
 }
+
 
 
