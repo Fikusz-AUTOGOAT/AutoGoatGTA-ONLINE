@@ -1,42 +1,22 @@
 <!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Euro Truck Open World</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>3D Racing — lokalny folder</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="ui-header">
-    <h1>Euro Truck — Open World</h1>
-    <div class="hud">
-      <div class="speed">Prędkość: <span id="speed">0</span> km/h</div>
-      <div class="gear">Bieg: <span id="gear">N</span></div>
-      <div class="money">Kasa: $<span id="money">0</span></div>
-    </div>
-  </header>
+<div id="hud">
+<div id="speed">Prędkość: 0</div>
+<div id="lap">Ok. 0</div>
+<div id="controls">Sterowanie: strzałki / WASD — przyspieszenie: W lub strzałka w</div>
+</div>
+<div id="gameContainer"></div>
 
-  <main class="game-area">
-    <canvas id="gameCanvas" width="1280" height="720"></canvas>
-    <canvas id="miniMap" width="200" height="200"></canvas>
-    <aside class="controls">
-      <p>Sterowanie:</p>
-      <ul>
-        <li>W / ↑ — gaz</li>
-        <li>S / ↓ — hamulec / wsteczny</li>
-        <li>A / ← — w lewo</li>
-        <li>D / → — w prawo</li>
-        <li>Spacja — podłącz/odłącz naczepę</li>
-      </ul>
-      <button id="resetBtn">Reset</button>
-    </aside>
-  </main>
 
-  <footer class="ui-footer">
-    Open World Euro Truck — demo
-  </footer>
-
-  <script src="game.js" type="module"></script>
+<!-- lokalna kopia three.js (upewnij się, że masz three.min.js w tym folderze) -->
+<script src="three.min.js"></script>
+<script src="game.js"></script>
 </body>
 </html>
-
