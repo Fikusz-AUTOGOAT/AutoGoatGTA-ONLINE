@@ -1,151 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FS25 Community</title>
-    <link rel="stylesheet" href="style.css">
-<!-- Suwak muzyki w prawym dolnym rogu -->
-<div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-  <label class="switch">
-    <input type="checkbox" id="music-toggle">
-    <span class="slider"></span>
-  </label>
-</div>
-
-<!-- Audio -->
-<audio id="bg-music" loop>
-  <source src="muzyka.mp3" type="audio/mpeg">
-  Twoja przeglądarka nie obsługuje audio.
-</audio>
-
-<!-- Style suwaka -->
-<style>
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 28px;
-}
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 34px;
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 22px;
-  width: 22px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
-}
-input:checked + .slider {
-  background-color: #4CAF50;
-}
-input:checked + .slider:before {
-  transform: translateX(22px);
-}
-</style>
-
-<!-- Skrypt włącz/wyłącz -->
-<script>
-const music = document.getElementById('bg-music');
-const toggle = document.getElementById('music-toggle');
-
-toggle.addEventListener('change', () => {
-  if(toggle.checked) {
-    music.play();
-  } else {
-    music.pause();
-  }
-});
-</script>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Euro Truck — demo</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>FS25 Community</h1>
-        </div>
+  <div id="ui-root">
+    <header class="ui-header">
+      <h1>Euro Truck — demo</h1>
+      <div class="hud">
+        <div class="speed">Prędkość: <span id="speed">0</span> km/h</div>
+        <div class="gear">Bieg: <span id="gear">N</span></div>
+      </div>
     </header>
 
-    <section id="galeria">
-    <h2>Galeria zdjęć</h2>
-    <div class="gallery-container">
-        <img src="mrd.jpg" alt="Zdjęcie 1">
-        <img src="Jondeer.jpg" alt="Zdjęcie 2">
-    </div>
-</section>
+    <main class="game-area">
+      <canvas id="gameCanvas" width="1280" height="720"></canvas>
+      <aside class="controls">
+        <p>Sterowanie:</p>
+        <ul>
+          <li>W / ↑ — gaz</li>
+          <li>S / ↓ — hamulec / wsteczny</li>
+          <li>A / ← — w lewo</li>
+          <li>D / → — w prawo</li>
+        </ul>
+        <button id="resetBtn">Reset</button>
+      </aside>
+    </main>
 
-
-    <section id="news">
-        <h2>Aktualności</h2>
-        <div class="news-container">
-            <article>
-                <h3>Nowa aktualizacja FS25</h3>
-                <p>Dodano nowe maszyny i mapy. Sprawdź wszystkie nowości w grze!</p>
-            </article>
-            <article>
-                <h3>Nowe Dlc!</h3>
-                <p>Nowe dlc w którym dodali Maszyny mercedesa.</p>
-            </article>
-            <article>
-                <h3>Nowy Mod Na Naszej Stronie!</h3>
-                <p>Mod A Dokładniej paczka PGR! Możliwa do Pobrania nie długo!</p>
-            </article>
-        </div>
-    </section>
-
-    <section id="contact">
-
-<section id="mody">
-  <h2>Mody do pobrania</h2>
-
-  <div class="mods-container">
-    <div class="mod">
-      <img src="mod1.jpg" alt="Mod 1 screen">
-      <h3>Paczka PGR mod FS25</h3>
-      <p>Opis: Paczka PGR to paczka która zawiera mody typu ursusy, stare hale itp.</p>
-      <!-- Kliknięcie przenosi do osobnej strony -->
-      <a href="mod1.html"><button>Sprawdź</button></a>
-    </div>
+    <footer class="ui-footer">
+      Host: GitHub Pages • Wszystkie pliki (HTML, CSS, JS, tekstury) w jednym folderze
+    </footer>
   </div>
-</section>
 
-    <script src="script.js"></script>
-
-<footer> <p>© 2025 FS25 Community | Wszystkie prawa zastrzeżone</p> </footer>
+  <script src="game.js" type="module"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
