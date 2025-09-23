@@ -106,3 +106,12 @@ body {
   color: #888;
 }
 
+#miniMap {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border: 2px solid #ffcc00;
+  background: rgba(0,0,0,0.7);
+}
+
+
