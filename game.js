@@ -1,72 +1,124 @@
-// Prosta gra wyścigowa z three.js
-// ogranicz prędkość
-speed = Math.max(Math.min(speed, maxSpeed), -0.6);
+// Podstawowa gra wyścigowa w Three.js
+// Wymaga lokalnego pliku three.min.js
 
+let scene, camera, renderer;
+let player, track;
+let speed = 0;
+let maxSpeed = 1.8;
+let acceleration = 0.02;
+let friction = 0.01;
+let lap = 0;
+let clock;
 
-// skręcanie (im szybszy tym większy wpływ)
-const steerPower = 1.5 * (0.2 + Math.abs(speed));
-if(left) player.rotation.y += 0.02 * steerPower * dt*60;
-if(right) player.rotation.y -= 0.02 * steerPower * dt*60;
+const hudSpeed = document.getElementById('speed');
+const hudLap = document.getElementById('lap');
 
+init();
+animate();
 
-// ruch naprzód w kierunku z przodu pojazdu
-const forwardVec = new THREE.Vector3(0,0,1);
-forwardVec.applyQuaternion(player.quaternion);
-forwardVec.normalize();
-player.position.add(forwardVec.multiplyScalar(speed * dt * 60));
+function init(){
+  clock = new THREE.Clock();
+  scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x101820, 0.0025);
 
+  // Kamera
+  camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.set(0, 6, -12);
 
-// proste ograniczenie granic toru
-const limit = 92;
-if(player.position.x > limit) player.position.x = limit;
-if(player.position.x < -limit) player.position.x = -limit;
-if(player.position.z > limit) player.position.z = limit;
-if(player.position.z < -limit) player.position.z = -limit;
+  // Renderer
+  renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setClearColor(0x0b1220);
+  document.getElementById('gameContainer').appendChild(renderer.domElement);
 
+  // Światło
+  const amb = new THREE.AmbientLight(0xffffff, 0.6);
+  scene.add(amb);
+  const dir = new THREE.DirectionalLight(0xffffff, 0.6);
+  dir.position.set(10,20,10);
+  scene.add(dir);
 
-// Kamera podąża i lekko "lerp"
-const camTargetPos = new THREE.Vector3().copy(player.position).add(new THREE.Vector3(0,6,-12).applyQuaternion(player.quaternion));
-camera.position.lerp(camTargetPos, 0.12);
-const lookAtPos = new THREE.Vector3().copy(player.position).add(new THREE.Vector3(0,1.5,3).applyQuaternion(player.quaternion));
-camera.lookAt(lookAtPos);
+  // Tor
+  const trackGeo = new THREE.PlaneGeometry(200, 200, 10, 10);
+  const trackMat = new THREE.MeshStandardMaterial({ color:0x2a2a2a });
+  track = new THREE.Mesh(trackGeo, trackMat);
+  track.rotation.x = -Math.PI/2;
+  scene.add(track);
 
+  // Linie toru
+  const lineMat = new THREE.LineBasicMaterial({ color:0x666666 });
+  const points = [
+    new THREE.Vector3(-80,0.01,-80),
+    new THREE.Vector3(80,0.01,-80),
+    new THREE.Vector3(80,0.01,80),
+    new THREE.Vector3(-80,0.01,80),
+    new THREE.Vector3(-80,0.01,-80),
+  ];
+  const lineGeo = new THREE.BufferGeometry().setFromPoints(points);
+  scene.add(new THREE.Line(lineGeo, lineMat));
 
-// HUD
-if(hudSpeed) hudSpeed.innerText = 'Prędkość: ' + Math.round(speed * 120);
-if(hudLap) hudLap.innerText = 'Ok. ' + lap;
+  // Auto gracza
+  const carGeo = new THREE.BoxGeometry(1.6,0.7,3);
+  const carMat = new THREE.MeshStandardMaterial({ color:0xff3333 });
+  player = new THREE.Mesh(carGeo, carMat);
+  player.position.set(0,0.5,0);
+  player.rotationOrder = 'YXZ';
+  scene.add(player);
+
+  camera.lookAt(player.position);
+
+  // Eventy
+  window.addEventListener('resize', onWindowResize);
+  setupControls();
 }
 
-
-function updateAI(dt){
-scene.traverse(obj=>{
-if(obj.userData && obj.userData.radius){
-obj.userData.angle += obj.userData.speed * dt;
-const a = obj.userData.angle;
-obj.position.set(Math.cos(a)*obj.userData.radius,0.5,Math.sin(a)*obj.userData.radius);
-// ustaw orientację
-obj.lookAt(0,0,0);
-}
-});
+function onWindowResize(){
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-
-function checkLaps(){
-// prosty checkpoint: przejście przez linię z = -80 w obszarze x between -10..10
-if(player.position.z < -78 && Math.abs(player.position.x) < 10){
-// aby nie naliczać co klatkę, wykorzystamy timer
-if(!player.userData || !player.userData.lastCross || (Date.now() - player.userData.lastCross) > 2000){
-player.userData = player.userData || {};
-player.userData.lastCross = Date.now();
-lap += 1;
-}
-}
+const keys = {};
+function setupControls(){
+  window.addEventListener('keydown', e=>{ keys[e.code] = true; });
+  window.addEventListener('keyup', e=>{ keys[e.code] = false; });
 }
 
+function updatePlayer(dt){
+  const forward = keys['ArrowUp'] || keys['KeyW'];
+  const backward = keys['ArrowDown'] || keys['KeyS'];
+  const left = keys['ArrowLeft'] || keys['KeyA'];
+  const right = keys['ArrowRight'] || keys['KeyD'];
+
+  if(forward) speed += acceleration;
+  if(backward) speed -= acceleration*0.8;
+  if(!forward && Math.abs(speed) > 0) speed -= Math.sign(speed) * friction * 0.8;
+  speed = Math.max(Math.min(speed, maxSpeed), -0.6);
+
+  const steerPower = 1.5 * (0.2 + Math.abs(speed));
+  if(left) player.rotation.y += 0.02 * steerPower * dt*60;
+  if(right) player.rotation.y -= 0.02 * steerPower * dt*60;
+
+  const forwardVec = new THREE.Vector3(0,0,1);
+  forwardVec.applyQuaternion(player.quaternion).normalize();
+  player.position.add(forwardVec.multiplyScalar(speed * dt * 60));
+
+  const limit = 92;
+  player.position.x = Math.max(Math.min(player.position.x, limit), -limit);
+  player.position.z = Math.max(Math.min(player.position.z, limit), -limit);
+
+  const camTargetPos = new THREE.Vector3().copy(player.position).add(new THREE.Vector3(0,6,-12).applyQuaternion(player.quaternion));
+  camera.position.lerp(camTargetPos, 0.12);
+  const lookAtPos = new THREE.Vector3().copy(player.position).add(new THREE.Vector3(0,1.5,3).applyQuaternion(player.quaternion));
+  camera.lookAt(lookAtPos);
+
+  hudSpeed.innerText = 'Prędkość: ' + Math.round(speed * 120);
+  hudLap.innerText = 'Okrążenie: ' + lap;
+}
 
 function animate(){
-requestAnimationFrame(animate);
-const dt = clock.getDelta();
-updatePlayer(dt);
-updateAI(dt);
-checkLaps();
-renderer.render(scene, camera);
+  requestAnimationFrame(animate);
+  const dt = clock.getDelta();
+  updatePlayer(dt);
+  renderer.render(scene, camera);
+}
