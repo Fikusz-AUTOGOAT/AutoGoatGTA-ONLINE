@@ -2,41 +2,44 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nazwa Gry 2 - Moja Platforma</title>
+  <title>Game 2 - Mini Steam</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- HEADER -->
   <header>
-    <div class="logo">🎮 Moja Platforma</div>
+    <h1>🎮 Game 2</h1>
     <nav>
-      <ul>
-        <li><a href="index.html">Sklep</a></li>
-        <li><a href="#">Biblioteka</a></li>
-        <li><a href="#">Społeczność</a></li>
-        <li><a href="#">O mnie</a></li>
-      </ul>
+      <a href="index.html">⬅ Powrót</a>
     </nav>
   </header>
 
-  <!-- OPIS GRY -->
-  <section class="game-detail">
-    <h1>Nazwa Gry 2</h1>
-    <div class="gallery">
-      <img src="twoje-zdjecie2.jpg" alt="Screen gry">
-      <img src="twoje-zdjecie5.jpg" alt="Screen gry">
-      <img src="twoje-zdjecie6.jpg" alt="Screen gry">
-    </div>
-    <p>
-      Opis tej gry. Dodaj tu informacje o świecie, zadaniach, mechanikach rozgrywki i ciekawostkach.
-    </p>
-    <button>Pobierz grę</button>
-  </section>
+  <main>
+    <section class="game-details">
+      <h2>Opis gry 2</h2>
+      <p>Tu wstawisz opis i screeny swojej gry.</p>
+      <a href="#" class="btn">📥 Pobierz</a>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Moja Platforma – Wszystkie prawa zastrzeżone</p>
-  </footer>
+    <section class="rating">
+      <h3>Oceń grę:</h3>
+      <button id="likeBtn2">👍 Like (<span id="likeCount2">0</span>)</button>
+      <button id="dislikeBtn2">👎 Dislike (<span id="dislikeCount2">0</span>)</button>
+    </section>
+
+    <section class="comments">
+      <h3>Komentarze</h3>
+      <form id="commentForm2">
+        <input type="text" id="username2" placeholder="Nick" required>
+        <textarea id="commentText2" placeholder="Twój komentarz..." required></textarea>
+        <button type="submit">Dodaj</button>
+      </form>
+      <ul id="commentList2"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    initGamePage("2");
+  </script>
 </body>
 </html>
