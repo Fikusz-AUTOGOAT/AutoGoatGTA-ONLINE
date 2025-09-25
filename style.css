@@ -1,50 +1,77 @@
-/* GAME DETAIL */
-.game-detail {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
+/* RATINGS */
+.ratings {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
 }
 
-.game-detail h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #00aaff;
+.ratings h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
 }
 
-.gallery {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.gallery img {
-  width: 30%;
-  border-radius: 8px;
-  transition: transform 0.2s;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-.game-detail p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 25px;
-  color: #ccc;
-}
-
-.game-detail button {
-  padding: 12px 25px;
+.ratings .buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.ratings .buttons button:hover {
+  background: #00aaff;
+}
+
+/* COMMENTS */
+.comments {
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.comments h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.comments form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.comments input, .comments textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+}
+
+.comments button {
+  align-self: flex-start;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
   background: #00aaff;
   color: #fff;
-  font-size: 16px;
   cursor: pointer;
+  transition: background 0.2s;
 }
 
-.game-detail button:hover {
+.comments button:hover {
   background: #008ecc;
+}
+
+#commentList .comment {
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
