@@ -1,21 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>3D Racing Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moja Platforma</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="hud">
-    <div id="speed">Prędkość: 0</div>
-    <div id="lap">Okrążenie: 0</div>
-    <div id="controls">Sterowanie: strzałki / WASD</div>
-  </div>
-  <div id="gameContainer"></div>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">🎮 Moja Platforma</div>
+    <nav>
+      <ul>
+        <li><a href="#">Sklep</a></li>
+        <li><a href="#">Biblioteka</a></li>
+        <li><a href="#">Społeczność</a></li>
+        <li><a href="#">O mnie</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- three.js lokalnie -->
-  <script src="three.min.js"></script>
-  <script src="game.js"></script>
+  <!-- HERO BANNER -->
+  <section class="hero">
+    <h1>Twoje Gry w Jednym Miejscu</h1>
+    <p>Pobieraj, instaluj i graj w swoje produkcje!</p>
+    <button>Pobierz Launcher</button>
+  </section>
+
+  <!-- LISTA GIER -->
+  <section class="games">
+    <h2>Moje Gry</h2>
+    <div class="game-list">
+      <div class="game-card">
+        <img src="twoje-zdjecie1.jpg" alt="Gra 1">
+        <h3>Nazwa Gry 1</h3>
+        <p>Krótki opis gry. Dynamiczna akcja i niezapomniana przygoda.</p>
+        <button>Pobierz</button>
+      </div>
+      <div class="game-card">
+        <img src="twoje-zdjecie2.jpg" alt="Gra 2">
+        <h3>Nazwa Gry 2</h3>
+        <p>Eksploracja, misje i otwarty świat czekają na Ciebie.</p>
+        <button>Pobierz</button>
+      </div>
+      <!-- Możesz dodać kolejne gry -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Moja Platforma – Wszystkie prawa zastrzeżone</p>
+  </footer>
 </body>
 </html>
