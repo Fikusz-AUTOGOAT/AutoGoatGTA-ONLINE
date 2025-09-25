@@ -168,3 +168,15 @@ main {
   margin-bottom: 10px;
   border-radius: 4px;
 }
+
+/* OBRAZKI GIER */
+.game-img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border: 2px solid #417a9b;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
