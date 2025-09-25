@@ -34,9 +34,64 @@
     <button>Pobierz grę</button>
   </section>
 
+  <!-- OCENY -->
+  <section class="ratings">
+    <h2>Oceń tę grę</h2>
+    <div class="buttons">
+      <button id="likeBtn">👍 Lubię to <span id="likeCount">0</span></button>
+      <button id="dislikeBtn">👎 Nie lubię <span id="dislikeCount">0</span></button>
+    </div>
+  </section>
+
+  <!-- KOMENTARZE -->
+  <section class="comments">
+    <h2>Komentarze</h2>
+    <form id="commentForm">
+      <input type="text" id="username" placeholder="Twoje imię" required>
+      <textarea id="commentText" rows="3" placeholder="Napisz komentarz..." required></textarea>
+      <button type="submit">Dodaj komentarz</button>
+    </form>
+    <div id="commentList"></div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <p>© 2025 Moja Platforma – Wszystkie prawa zastrzeżone</p>
   </footer>
+
+  <!-- SKRYPT -->
+  <script>
+    // LIKE / DISLIKE
+    let likeCount = 0;
+    let dislikeCount = 0;
+
+    document.getElementById("likeBtn").addEventListener("click", () => {
+      likeCount++;
+      document.getElementById("likeCount").innerText = likeCount;
+    });
+
+    document.getElementById("dislikeBtn").addEventListener("click", () => {
+      dislikeCount++;
+      document.getElementById("dislikeCount").innerText = dislikeCount;
+    });
+
+    // KOMENTARZE
+    const form = document.getElementById("commentForm");
+    const commentList = document.getElementById("commentList");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const commentText = document.getElementById("commentText").value;
+
+      const commentDiv = document.createElement("div");
+      commentDiv.classList.add("comment");
+      commentDiv.innerHTML = `<strong>${username}:</strong> ${commentText}`;
+
+      commentList.prepend(commentDiv);
+
+      form.reset();
+    });
+  </script>
 </body>
 </html>
