@@ -2,96 +2,45 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nazwa Gry 1 - Moja Platforma</title>
+  <title>Game 1 - Mini Steam</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- HEADER -->
   <header>
-    <div class="logo">🎮 Moja Platforma</div>
+    <h1>🎮 Game 1</h1>
     <nav>
-      <ul>
-        <li><a href="index.html">Sklep</a></li>
-        <li><a href="#">Biblioteka</a></li>
-        <li><a href="#">Społeczność</a></li>
-        <li><a href="#">O mnie</a></li>
-      </ul>
+      <a href="index.html">⬅ Powrót</a>
     </nav>
   </header>
 
-  <!-- OPIS GRY -->
-  <section class="game-detail">
-    <h1>Nazwa Gry 1</h1>
-    <div class="gallery">
-      <img src="twoje-zdjecie1.jpg" alt="Screen gry">
-      <img src="twoje-zdjecie3.jpg" alt="Screen gry">
-      <img src="twoje-zdjecie4.jpg" alt="Screen gry">
-    </div>
-    <p>
-      To jest pełny opis Twojej gry. Możesz tutaj napisać fabułę, funkcje, tryby rozgrywki, wymagania sprzętowe i inne szczegóły.
-    </p>
-    <button>Pobierz grę</button>
-  </section>
+  <main>
+    <section class="game-details">
+      <h2>Opis gry 1</h2>
+      <p>Tu wstawisz opis i screeny swojej gry.</p>
+      <a href="#" class="btn">📥 Pobierz</a>
+    </section>
 
-  <!-- OCENY -->
-  <section class="ratings">
-    <h2>Oceń tę grę</h2>
-    <div class="buttons">
-      <button id="likeBtn">👍 Lubię to <span id="likeCount">0</span></button>
-      <button id="dislikeBtn">👎 Nie lubię <span id="dislikeCount">0</span></button>
-    </div>
-  </section>
+    <section class="rating">
+      <h3>Oceń grę:</h3>
+      <button id="likeBtn1">👍 Like (<span id="likeCount1">0</span>)</button>
+      <button id="dislikeBtn1">👎 Dislike (<span id="dislikeCount1">0</span>)</button>
+    </section>
 
-  <!-- KOMENTARZE -->
-  <section class="comments">
-    <h2>Komentarze</h2>
-    <form id="commentForm">
-      <input type="text" id="username" placeholder="Twoje imię" required>
-      <textarea id="commentText" rows="3" placeholder="Napisz komentarz..." required></textarea>
-      <button type="submit">Dodaj komentarz</button>
-    </form>
-    <div id="commentList"></div>
-  </section>
+    <section class="comments">
+      <h3>Komentarze</h3>
+      <form id="commentForm1">
+        <input type="text" id="username1" placeholder="Nick" required>
+        <textarea id="commentText1" placeholder="Twój komentarz..." required></textarea>
+        <button type="submit">Dodaj</button>
+      </form>
+      <ul id="commentList1"></ul>
+    </section>
+  </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Moja Platforma – Wszystkie prawa zastrzeżone</p>
-  </footer>
-
-  <!-- SKRYPT -->
+  <script src="script.js"></script>
   <script>
-    // LIKE / DISLIKE
-    let likeCount = 0;
-    let dislikeCount = 0;
-
-    document.getElementById("likeBtn").addEventListener("click", () => {
-      likeCount++;
-      document.getElementById("likeCount").innerText = likeCount;
-    });
-
-    document.getElementById("dislikeBtn").addEventListener("click", () => {
-      dislikeCount++;
-      document.getElementById("dislikeCount").innerText = dislikeCount;
-    });
-
-    // KOMENTARZE
-    const form = document.getElementById("commentForm");
-    const commentList = document.getElementById("commentList");
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const username = document.getElementById("username").value;
-      const commentText = document.getElementById("commentText").value;
-
-      const commentDiv = document.createElement("div");
-      commentDiv.classList.add("comment");
-      commentDiv.innerHTML = `<strong>${username}:</strong> ${commentText}`;
-
-      commentList.prepend(commentDiv);
-
-      form.reset();
-    });
+    initGamePage("1"); // ważne! każda gra ma swoje ID
   </script>
 </body>
 </html>
+
