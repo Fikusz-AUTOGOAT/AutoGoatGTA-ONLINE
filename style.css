@@ -73,6 +73,7 @@ main {
 
 /* PRZYCISKI */
 .btn, button {
+  display: inline-block; /* blok dla lepszego odstępu */
   background: linear-gradient(to bottom, #66c0f4, #417a9b);
   border: none;
   color: white;
@@ -82,10 +83,26 @@ main {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.2s;
+  margin-top: 10px; /* dodaje odstęp od tekstu powyżej */
 }
 
 .btn:hover, button:hover {
   background: linear-gradient(to bottom, #417a9b, #1b2838);
+}
+
+/* dodatkowo dla kart gier w index.html */
+.game-card {
+  display: flex;
+  flex-direction: column; /* wszystkie elementy w kolumnie */
+}
+
+.game-card p {
+  margin-bottom: 10px; /* odstęp między opisem a przyciskiem */
+}
+
+/* dla sekcji pobierz w game1.html i game2.html */
+.game-details .btn {
+  margin-top: 20px; /* większy odstęp od tekstu gry */
 }
 
 /* SEKCJA GRY */
